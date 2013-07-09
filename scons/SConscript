@@ -1,0 +1,19 @@
+Import('env')
+
+_INCLUDES = ['../include']
+_INCLUDES = [Dir(i).abspath for i in _INCLUDES]
+
+_LIBS = ['libBulletCollision.a', 'libBulletDynamics.a', \
+		'libBulletFileLoader.a', 'libBulletMultiThreaded.a', \
+		'libBulletSoftBody.a', 'libBulletWorldImporter.a', \
+		'libBulletXmlWorldImporter.a', 'libLinearMath.a', \
+		'libMiniCL.a']
+if env['PLATFORM'] == 'darwin':
+	_LIBS = [File('../lib/macosx/' + s) for s in _LIBS]
+else:
+	_LIBS = []
+
+env.Append(CPPPATH = _INCLUDES)
+env.Append(LIBS = _LIBS)
+
+Return('env')
