@@ -7,8 +7,8 @@ Cinder-Bullet
 tar zxvf bullet-2.81-rev2613.tgz
 cd bullet-2.81-rev2613
 patch < btConeShapeSerialization.diff
-mkdir build
-cd build
+mkdir cmake
+cd cmake
 cmake -D"CMAKE_OSX_ARCHITECTURES=i386;x86_64" \
 	-DBUILD_EXTRAS=ON \
 	-DCMAKE_INSTALL_PREFIX=`pwd` \
