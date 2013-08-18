@@ -6,7 +6,7 @@ Cinder-Bullet
 <pre>
 tar zxvf bullet-2.81-rev2613.tgz
 cd bullet-2.81-rev2613
-patch -p1 < btConeSerialization.patch
+patch -p1 \< btConeSerialization.patch
 mkdir cmake
 cd cmake
 cmake -D"CMAKE_OSX_ARCHITECTURES=i386;x86_64" \
